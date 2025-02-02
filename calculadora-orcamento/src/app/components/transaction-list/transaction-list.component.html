@@ -1,0 +1,24 @@
+<div class="card shadow-sm p-4 mt-4">
+  <h4 class="text-center">Histórico de Transações</h4>
+
+  <!-- Se não houver transações, exibe uma mensagem -->
+  <p *ngIf="transactions.length === 0" class="text-center text-muted">
+    Nenhuma transação adicionada.
+  </p>
+
+  <!-- Lista de transações -->
+  <ul class="list-group">
+    <li *ngFor="let transaction of transactions; let i = index"
+        class="list-group-item d-flex justify-content-between align-items-center"
+        [ngClass]="{'text-success': transaction.amount > 0, 'text-danger': transaction.amount < 0}">
+
+      <span>{{ transaction.description }}</span>
+      <span>{{ transaction.amount | currency:'BRL' }}</span>
+
+      <!-- Botão para remover a transação -->
+      <button class="btn btn-danger btn-sm" (click)="removeTransaction(i)">
+        <i class="bi bi-trash"></i>
+      </button>
+    </li>
+  </ul>
+</div>

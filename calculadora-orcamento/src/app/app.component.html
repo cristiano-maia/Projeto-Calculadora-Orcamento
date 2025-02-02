@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <h2 class="text-center">
+    <i class="bi bi-calculator custom-icon"></i> Calculadora de Orçamento Pessoal
+  </h2>
+
+  <!-- Exibir saldo total -->
+  <app-balance [transactions]="transactions"></app-balance>
+
+  <!-- Formulário para adicionar transações -->
+  <app-transaction-form (transactionAdded)="onTransactionAdded($event)"></app-transaction-form>
+
+  <!-- Lista de transações -->
+  <app-transaction-list
+    [transactions]="transactions"
+    (transactionRemoved)="onTransactionRemoved($event)">
+  </app-transaction-list>

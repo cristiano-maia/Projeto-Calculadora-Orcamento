@@ -1,0 +1,6 @@
+<div class="card shadow-sm p-4 text-center">
+  <h4>Saldo Total</h4>
+  <p class="fs-3 fw-bold" [ngClass]="{'text-success': balance > 0, 'text-danger': balance < 0}">
+    {{ balance | currency:'BRL' }}
+  </p>
+</div>

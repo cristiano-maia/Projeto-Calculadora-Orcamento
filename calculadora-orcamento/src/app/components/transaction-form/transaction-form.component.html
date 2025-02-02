@@ -1,0 +1,19 @@
+<div class="card shadow-sm p-4">
+  <h4 class="text-center">Adicionar Transação</h4>
+
+  <form (submit)="addTransaction()">
+    <div class="mb-3">
+      <label for="description" class="form-label fw-bold">Descrição</label>
+      <input type="text" class="form-control" id="description" [(ngModel)]="description" name="description" placeholder="Ex: Salário, Mercado">
+    </div>
+
+    <div class="mb-3">
+      <label for="amount" class="form-label fw-bold">Valor (use negativo para despesas)</label>
+      <input type="number" class="form-control" id="amount" [(ngModel)]="amount" name="amount" placeholder="Ex: 1000 ou -200">
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">
+      <i class="bi bi-plus-circle"></i> Adicionar
+    </button>
+  </form>
+</div>
